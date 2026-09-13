@@ -1,0 +1,10 @@
+{
+  "description": "This coaching and mentoring platform enables coaches and mentees to create programs, schedule sessions, manage notes, and facilitate payments, enhancing personal and professional growth.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
