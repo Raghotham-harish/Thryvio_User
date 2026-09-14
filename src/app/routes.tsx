@@ -8,6 +8,7 @@ import HowItWorks from "@/pages/HowItWorks";
 import Enterprise from "@/pages/Enterprise";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
+import DesignSystem from "@/pages/DesignSystem";
 
 function RootLayout() {
   return (
@@ -46,6 +47,7 @@ export const router = createBrowserRouter([
       { path: "programs", Component: Programs },
       { path: "how-it-works", Component: HowItWorks },
       { path: "enterprise", Component: Enterprise },
+      { path: "design-system", Component: DesignSystem },
       { path: "*", Component: NotFound },
     ],
   },

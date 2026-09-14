@@ -89,7 +89,7 @@ export default function Login() {
 
             <div className="my-6 flex items-center gap-3">
               <div className="flex-1 h-px bg-[#D6E1F2]" />
-              <span className="text-[12px] text-[#B0BDD4] font-semibold">or continue with</span>
+              <span className="text-[12px] text-[#5B6D90] font-semibold">or continue with</span>
               <div className="flex-1 h-px bg-[#D6E1F2]" />
             </div>
 
@@ -103,11 +103,11 @@ export default function Login() {
             </div>
           </div>
 
-          <p className="text-center text-[12px] text-[#B0BDD4] mt-6" style={{ fontFamily: "Khula" }}>
+          <p className="text-center text-[12px] text-[#5B6D90] mt-6" style={{ fontFamily: "Khula" }}>
             By signing in you agree to our{" "}
-            <Link to="/terms" className="underline hover:text-[#435070]">Terms</Link>
+            <Link to="/terms" className="underline hover:text-[#2563EB]">Terms</Link>
             {" and "}
-            <Link to="/privacy" className="underline hover:text-[#435070]">Privacy Policy</Link>.
+            <Link to="/privacy" className="underline hover:text-[#2563EB]">Privacy Policy</Link>.
           </p>
         </div>
       </div>

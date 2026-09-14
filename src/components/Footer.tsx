@@ -48,7 +48,7 @@ export default function Footer() {
           {/* Brand col */}
           <div className="md:col-span-1">
             <ThryvioHorizontalDark width={124} height={40} />
-            <p className="mt-4 text-[13px] text-white/50 leading-relaxed" style={{ fontFamily: "Khula" }}>
+            <p className="mt-4 text-[13px] text-white/65 leading-relaxed" style={{ fontFamily: "Khula" }}>
               Connecting people with world-class coaches and mentors. Globally credentialed. GDPR Compliant.
             </p>
             <div className="mt-5 flex gap-3">
@@ -63,7 +63,7 @@ export default function Footer() {
           {/* Link cols */}
           {cols.map(col => (
             <div key={col.heading}>
-              <p className="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-4">{col.heading}</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-white/60 mb-4">{col.heading}</p>
               <ul className="space-y-2.5" role="list">
                 {col.links.map(l => (
                   <li key={l.label}>
@@ -83,10 +83,11 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-[12px] text-white/30" style={{ fontFamily: "Khula" }}>
-            © 2026 Thryvio. All rights reserved.
+          <p className="text-[12px] text-white/55" style={{ fontFamily: "Khula" }}>
+            © 2026 Thryvio. All rights reserved. &nbsp;·&nbsp;
+            <Link to="/design-system" className="hover:text-white/80 transition-colors">Design system</Link>
           </p>
-          <div className="flex flex-wrap gap-4 text-[12px] text-white/30" style={{ fontFamily: "Khula" }}>
+          <div className="flex flex-wrap gap-4 text-[12px] text-white/55" style={{ fontFamily: "Khula" }}>
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-[14px] text-[#1DD7A5]">verified</span>
               Credentialed Professionals

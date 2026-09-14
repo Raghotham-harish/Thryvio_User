@@ -114,7 +114,7 @@ export default function HowItWorks() {
                   <div className="icon-bg w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
                     <span className="material-symbols-outlined text-[20px] text-[#2563EB]">{s.icon}</span>
                   </div>
-                  <span className="text-[11px] font-bold text-[#6B7A99]">STEP {String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[11px] font-bold text-[#435070]">STEP {String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="text-[17px] font-bold text-[#0D1B2E] mb-2 leading-tight">{s.title}</h3>
                 <p className="text-[14px] text-[#435070] leading-relaxed" style={{ fontFamily: "Khula" }}>{s.desc}</p>
@@ -216,7 +216,7 @@ export default function HowItWorks() {
 
           {/* IA footer links */}
           <div className="mt-10 pt-8 border-t border-[#D6E1F2]">
-            <p className="text-[12px] font-bold uppercase tracking-widest text-[#6B7A99] mb-4">You might also explore</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-[#435070] mb-4">You might also explore</p>
             <div className="flex flex-wrap gap-3">
               <Link to="/find-a-coach" className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#D6E1F2] text-[13px] font-semibold text-[#2C3A52] hover:border-[#2563EB] hover:text-[#1D4ED8] transition-all">
                 <span className="material-symbols-outlined text-[16px]">person_search</span>

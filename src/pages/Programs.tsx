@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import Select from "@/components/Select";
 
 /* ─────────────────────────────────────────────────────────────
    DESIGN-SYSTEM CONSTANTS
@@ -18,7 +19,7 @@ const DS = {
   success:    "text-[#065F46]",                        // green status — AA on white 7.4:1
   border:     "border-[#D6E1F2]",
   surface:    "bg-[#F5F8FC]",
-  label:      "text-[10px] font-bold uppercase tracking-wider text-[#6B7A99]",
+  label:      "text-[10px] font-bold uppercase tracking-wider text-[#2C3A52]",
   sectionLbl: "text-[10px] font-bold uppercase tracking-wider text-[#2563EB]",
 };
 
@@ -250,11 +251,11 @@ function SeatsStatus({ seats, seatsLeft, totalSeats }: { seats: string; seatsLef
   return (
     <div>
       <div className="flex items-center justify-between mb-1">
-        <span className={`text-[11px] font-bold ${urgent ? DS.urgency : full ? "text-[#6B7A99]" : DS.success}`}>
+        <span className={`text-[11px] font-bold ${urgent ? DS.urgency : full ? "text-[#435070]" : DS.success}`}>
           {urgent && <span className="material-symbols-outlined text-[12px] align-middle mr-0.5">warning</span>}
           {seats}
         </span>
-        <span className="text-[11px] text-[#6B7A99]">{pct}% full</span>
+        <span className="text-[11px] text-[#435070]">{pct}% full</span>
       </div>
       <div className="h-1 bg-[#EBF0F9] rounded-full overflow-hidden">
         <div className="h-full rounded-full" style={{ width:`${pct}%`, background: DS.bar }} />
@@ -289,7 +290,7 @@ function ProgramCard({ p }: { p: Program }) {
           <img src={p.speaker.photo} alt={p.speaker.name} className="w-8 h-8 rounded-full object-cover shrink-0 ring-2 ring-[#EBF0F9]" />
           <div className="min-w-0">
             <p className="text-[12px] font-bold text-[#0D1B2E] truncate">{p.speaker.name}</p>
-            <p className="text-[11px] text-[#6B7A99] truncate" style={{ fontFamily:"Khula" }}>{p.speaker.title}</p>
+            <p className="text-[11px] text-[#435070] truncate" style={{ fontFamily:"Khula" }}>{p.speaker.title}</p>
           </div>
         </div>
 
@@ -317,7 +318,7 @@ function ProgramCard({ p }: { p: Program }) {
           </span>
           <div className="flex items-center gap-1">
             {p.attendeeOrgs.slice(0,3).map(o => <OrgChip key={o.name} org={o} />)}
-            <span className="text-[10px] text-[#6B7A99] ml-1">+orgs</span>
+            <span className="text-[10px] text-[#435070] ml-1">+orgs</span>
           </div>
         </div>
 
@@ -383,7 +384,7 @@ function EventCard({ e }: { e: Event }) {
                 <span className="text-[12px] font-semibold text-[#0D1B2E]">{s.name}</span>
               </div>
             ))}
-            {e.speakers.length > 2 && <span className="text-[11px] text-[#6B7A99]">+{e.speakers.length - 2}</span>}
+            {e.speakers.length > 2 && <span className="text-[11px] text-[#435070]">+{e.speakers.length - 2}</span>}
           </div>
         </div>
 
@@ -392,7 +393,7 @@ function EventCard({ e }: { e: Event }) {
           <div className="flex gap-1">
             {e.attendeeOrgs.slice(0,3).map(o => <OrgChip key={o.name} org={o} />)}
           </div>
-          <p className="text-[11px] text-[#6B7A99]" style={{ fontFamily:"Khula" }}>{e.registered}+ registered</p>
+          <p className="text-[11px] text-[#435070]" style={{ fontFamily:"Khula" }}>{e.registered}+ registered</p>
           <div className="ml-auto flex items-center gap-3 shrink-0">
             <p className="text-[16px] font-bold text-[#0D1B2E]">{e.price}</p>
             <button className={`px-4 py-2 rounded-xl text-[12px] font-bold transition-colors ${DS.btnDark}`}>
@@ -412,7 +413,7 @@ function WorkshopCard({ w }: { w: Workshop }) {
   const pct = Math.round(((w.totalSeats - w.seatsLeft) / w.totalSeats) * 100);
   const urgent = w.seatsLeft > 0 && w.seatsLeft <= 6;
   return (
-    <article className={`bg-white border-2 rounded-2xl overflow-hidden hover:shadow-lg transition-all flex flex-col group`} style={{ borderColor:`${w.tagColor}25` }}>
+    <article className={`bg-white border ${DS.border} rounded-2xl overflow-hidden hover:shadow-lg hover:border-[#2563EB]/30 transition-all flex flex-col group`}>
       {/* Thumbnail */}
       <div className="relative h-36 bg-[#0D2347] overflow-hidden">
         <img src={w.photo} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105" style={{ filter:"saturate(0.8) contrast(1.05)" }} />
@@ -440,7 +441,7 @@ function WorkshopCard({ w }: { w: Workshop }) {
           <img src={w.speaker.photo} alt={w.speaker.name} className="w-8 h-8 rounded-full object-cover shrink-0 ring-2 ring-[#EBF0F9]" />
           <div className="min-w-0">
             <p className="text-[12px] font-bold text-[#0D1B2E] truncate">{w.speaker.name}</p>
-            <p className="text-[11px] text-[#6B7A99] truncate" style={{ fontFamily:"Khula" }}>{w.speaker.title}</p>
+            <p className="text-[11px] text-[#435070] truncate" style={{ fontFamily:"Khula" }}>{w.speaker.title}</p>
           </div>
           <div className="ml-auto bg-[#ECEEF2] text-[#5A6479] rounded-lg px-2 py-1 text-center shrink-0">
             <p className="text-[14px] font-bold leading-none">{w.cohortSize}</p>
@@ -466,7 +467,7 @@ function WorkshopCard({ w }: { w: Workshop }) {
           <div className="flex gap-1">
             {w.attendeeOrgs.slice(0,4).map(o => <OrgChip key={o.name} org={o} />)}
           </div>
-          <p className="text-[11px] text-[#6B7A99]" style={{ fontFamily:"Khula" }}>Cohort members from</p>
+          <p className="text-[11px] text-[#435070]" style={{ fontFamily:"Khula" }}>Cohort members from</p>
         </div>
 
         {/* Progress + price + CTA */}
@@ -476,7 +477,7 @@ function WorkshopCard({ w }: { w: Workshop }) {
               {urgent && <span className="material-symbols-outlined text-[12px] align-middle mr-0.5">warning</span>}
               {w.seats}
             </span>
-            <span className="text-[11px] text-[#6B7A99]">{pct}% full</span>
+            <span className="text-[11px] text-[#435070]">{pct}% full</span>
           </div>
           <div className="h-1 bg-[#EBF0F9] rounded-full overflow-hidden mb-3">
             <div className="h-full rounded-full" style={{ width:`${pct}%`, background: DS.bar }} />
@@ -546,30 +547,43 @@ export default function Programs() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        {/* ── Filters ── */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
-          {filterTags.map(f => (
-            <button key={f} onClick={() => setTag(f)}
-              className={`px-3 py-1.5 rounded-full text-[13px] font-semibold transition-all ${tag === f ? "bg-[#2563EB] text-white" : "bg-white border border-[#D6E1F2] text-[#2C3A52] hover:border-[#2563EB] hover:text-[#2563EB]"}`}
-            >{f}</button>
-          ))}
-          {activeTab === "programs" && (
-            <select value={level} onChange={e => setLevel(e.target.value)}
-              className="ml-auto text-[13px] font-semibold text-[#2C3A52] border border-[#D6E1F2] rounded-lg px-3 py-1.5 bg-white outline-none"
-              aria-label="Filter by level"
-            >
-              {levelOptions.map(l => <option key={l}>{l}</option>)}
-            </select>
-          )}
-          <p className="text-[12px] text-[#6B7A99] ml-auto" style={{ fontFamily:"Khula" }}>
-            <span className="font-bold text-[#0D1B2E]">{count}</span> results
-          </p>
+        {/* ── Sub-tabs (topic) ── */}
+        <div className="border-b border-[#D6E1F2] mb-6 flex items-center justify-between gap-4 flex-wrap">
+          <div className="flex gap-0 overflow-x-auto -mb-px">
+            {filterTags.map(f => (
+              <button
+                key={f}
+                onClick={() => setTag(f)}
+                className={`px-4 py-2.5 text-[13px] font-semibold whitespace-nowrap border-b-2 transition-colors ${
+                  tag === f
+                    ? "border-[#2563EB] text-[#2563EB]"
+                    : "border-transparent text-[#435070] hover:text-[#0A192F] hover:border-[#D6E1F2]"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-3 shrink-0 pb-2">
+            {activeTab === "programs" && (
+              <Select
+                label="Filter by level"
+                value={level}
+                onChange={setLevel}
+                options={levelOptions}
+                className="w-40"
+              />
+            )}
+            <p className="text-[12px] text-[#435070]" style={{ fontFamily:"Khula" }}>
+              <span className="font-bold text-[#0D1B2E]">{count}</span> results
+            </p>
+          </div>
         </div>
 
         {/* ── Cards ── */}
         {count === 0 ? (
           <div className="text-center py-20">
-            <span className="material-symbols-outlined text-[48px] text-[#6B7A99] block mb-3">search_off</span>
+            <span className="material-symbols-outlined text-[48px] text-[#435070] block mb-3">search_off</span>
             <p className="text-[18px] font-semibold text-[#2C3A52]">Nothing matches those filters</p>
             <button onClick={() => { setTag("All"); setLevel("All"); }} className="mt-4 px-4 py-2 text-[13px] font-bold text-[#2563EB] border border-[#2563EB] rounded-lg hover:bg-[#EBF0F9]">Clear filters</button>
           </div>

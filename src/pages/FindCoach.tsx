@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams, Link } from "react-router";
+import Select from "@/components/Select";
 
 const allCoaches = [
   {
@@ -225,14 +226,13 @@ export default function FindCoach() {
               </button>
 
               {/* Sort */}
-              <select
+              <Select
+                label="Sort coaches"
                 value={sort}
-                onChange={e => setSort(e.target.value)}
-                className="text-[13px] font-semibold text-[#2C3A52] border border-[#D6E1F2] rounded-lg px-3 py-2 bg-white outline-none cursor-pointer"
-                aria-label="Sort coaches"
-              >
-                {sortOptions.map(s => <option key={s}>{s}</option>)}
-              </select>
+                onChange={setSort}
+                options={sortOptions}
+                className="w-44"
+              />
 
               {/* View toggle */}
               <div className="hidden sm:flex border border-[#D6E1F2] rounded-lg overflow-hidden">
@@ -260,7 +260,7 @@ export default function FindCoach() {
           {/* Coach grid / list */}
           {filtered.length === 0 ? (
             <div className="text-center py-20">
-              <span className="material-symbols-outlined text-[48px] text-[#6B7A99] block mb-3">search_off</span>
+              <span className="material-symbols-outlined text-[48px] text-[#435070] block mb-3">search_off</span>
               <p className="text-[18px] font-semibold text-[#2C3A52]">No advisors found</p>
               <p className="text-[14px] text-[#435070] mt-1 leading-relaxed" style={{ fontFamily: "Khula" }}>Try adjusting your search or filters.</p>
               <button onClick={() => { setQuery(""); setSpecialty("All"); setPrice("All"); setStyle("All"); }} className="mt-4 px-4 py-2 text-[13px] font-bold text-[#2563EB] border border-[#2563EB] rounded-lg hover:bg-[#EBF0F9]">
@@ -277,7 +277,7 @@ export default function FindCoach() {
 
           {/* IA discoverability footer */}
           <section className="border-t border-[#D6E1F2] mt-12 pt-10 pb-6">
-            <p className="text-[12px] font-bold uppercase tracking-widest text-[#6B7A99] mb-4">Explore further</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-[#435070] mb-4">Explore further</p>
             <div className="flex flex-wrap gap-3">
               <Link to="/programs" className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#D6E1F2] text-[13px] font-semibold text-[#2C3A52] hover:border-[#2563EB] hover:text-[#1D4ED8] transition-all">
                 <span className="material-symbols-outlined text-[16px]">workspace_premium</span>

@@ -132,7 +132,7 @@ export default function Signup() {
 
                   <div className="my-5 flex items-center gap-3">
                     <div className="flex-1 h-px bg-[#D6E1F2]" />
-                    <span className="text-[12px] text-[#B0BDD4] font-semibold">or</span>
+                    <span className="text-[12px] text-[#5B6D90] font-semibold">or</span>
                     <div className="flex-1 h-px bg-[#D6E1F2]" />
                   </div>
 
@@ -148,9 +148,9 @@ export default function Signup() {
               )}
             </div>
 
-            <p className="text-center text-[12px] text-[#B0BDD4] mt-4" style={{ fontFamily: "Khula" }}>
+            <p className="text-center text-[12px] text-[#5B6D90] mt-4" style={{ fontFamily: "Khula" }}>
               By creating an account you agree to our{" "}
-              <Link to="/terms" className="underline hover:text-[#435070]">Terms</Link>
+              <Link to="/terms" className="underline hover:text-[#2563EB]">Terms</Link>
               {" and "}
               <Link to="/privacy" className="underline hover:text-[#435070]">Privacy Policy</Link>.
             </p>

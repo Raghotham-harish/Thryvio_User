@@ -288,7 +288,7 @@ export default function Home() {
 
               {/* Trending chips */}
               <div>
-                <p className="text-[11px] font-semibold text-white/45 mb-2 uppercase tracking-wider">Trending</p>
+                <p className="text-[11px] font-semibold text-white/65 mb-2 uppercase tracking-wider">Trending</p>
                 <div className="flex flex-wrap gap-2">
                   {["Executive", "Career pivot", "Startup", "Life", "Well-being", "Performance"].map(t => (
                     <button
@@ -397,7 +397,7 @@ export default function Home() {
                 <span className="text-[12px] font-semibold text-white/80 group-hover:text-white transition-colors whitespace-nowrap">
                   {item.label}
                 </span>
-                <span className="text-[11px] text-white/40 shrink-0">{item.date}</span>
+                <span className="text-[11px] text-white/65 shrink-0">{item.date}</span>
                 <span className="text-[10px] font-bold text-[#1DD7A5] shrink-0">{item.seats}</span>
               </Link>
             ))}
@@ -431,15 +431,12 @@ export default function Home() {
                 to={`/find-a-coach?q=${g.query}`}
                 className="group flex flex-col items-center text-center p-5 rounded-2xl bg-white border border-[#D6E1F2] hover:border-[#2563EB]/40 hover:shadow-lg transition-all cursor-pointer"
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
-                  style={{ background: g.bg }}
-                >
-                  <span className="material-symbols-outlined text-[24px]" style={{ color: g.color }} aria-hidden="true">{g.icon}</span>
+                <div className="icon-bg w-12 h-12 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
+                  <span className="material-symbols-outlined text-[24px] text-[#2563EB]" aria-hidden="true">{g.icon}</span>
                 </div>
                 <p className="text-[13px] font-bold text-[#0A192F] leading-snug mb-1">{g.label}</p>
-                <p className="text-[11px] text-[#6B7A99] leading-snug mb-2">{g.sub}</p>
-                <span className="text-[10px] font-bold mt-auto" style={{ color: g.color }}>{g.count}</span>
+                <p className="text-[11px] text-[#435070] leading-snug mb-2">{g.sub}</p>
+                <span className="text-[10px] font-bold mt-auto text-[#2563EB]">{g.count}</span>
               </Link>
             ))}
           </div>
@@ -713,10 +710,10 @@ export default function Home() {
       {/* ── Trusted by organisations ── */}
       <section className="py-12 bg-white border-b border-[#D6E1F2]" aria-label="Trusted organisations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-center text-[11px] font-bold uppercase tracking-widest text-[#B0BDD4] mb-8">Trusted by teams at leading organisations</p>
+          <p className="text-center text-[11px] font-bold uppercase tracking-widest text-[#5B6D90] mb-8">Trusted by teams at leading organisations</p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {trustedOrgs.map(org => (
-              <span key={org} className="text-[15px] font-bold text-[#B0BDD4] hover:text-[#6B7A99] transition-colors cursor-default select-none" style={{ fontFamily: "Fraunces" }}>
+              <span key={org} className="text-[15px] font-bold text-[#5B6D90] hover:text-[#435070] transition-colors cursor-default select-none" style={{ fontFamily: "Fraunces" }}>
                 {org}
               </span>
             ))}

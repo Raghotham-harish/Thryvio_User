@@ -181,10 +181,10 @@ export default function Enterprise() {
       {/* ── Trusted by ── */}
       <section className="bg-white border-b border-[#D6E1F2] py-10" aria-label="Client organisations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <p className="text-center text-[11px] font-bold uppercase tracking-widest text-[#6B7A99] mb-7">Trusted by leading organisations</p>
+          <p className="text-center text-[11px] font-bold uppercase tracking-widest text-[#435070] mb-7">Trusted by leading organisations</p>
           <div className="flex flex-wrap justify-center gap-4">
             {clients.map(c => (
-              <div key={c} className="px-5 py-2.5 rounded-lg border border-[#D6E1F2] bg-[#F5F8FC] text-[13px] font-bold text-[#6B7A99] tracking-wide">{c}</div>
+              <div key={c} className="px-5 py-2.5 rounded-lg border border-[#D6E1F2] bg-[#F5F8FC] text-[13px] font-bold text-[#435070] tracking-wide">{c}</div>
             ))}
           </div>
         </div>
@@ -336,7 +336,7 @@ export default function Enterprise() {
                       <p className="text-[12px] font-bold text-white">{cs.company}</p>
                       <p className="text-[11px]" style={{ color: "#A8F0DF" }}>{cs.industry}</p>
                     </div>
-                    <span className="material-symbols-outlined text-[20px] text-white/40 group-hover:text-white transition-colors">arrow_forward</span>
+                    <span className="material-symbols-outlined text-[20px] text-white/65 group-hover:text-white transition-colors">arrow_forward</span>
                   </div>
                 </div>
               </article>
@@ -469,12 +469,12 @@ export default function Enterprise() {
                 </div>
                 <div>
                   <label className="block text-[12px] font-semibold text-[#2C3A52] mb-1.5" htmlFor="ent-msg">What are you hoping to achieve?</label>
-                  <textarea id="ent-msg" rows={3} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} className="w-full px-4 py-2.5 border border-[#D6E1F2] bg-[#F5F8FC] rounded-xl text-[14px] text-[#0D1B2E] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 resize-none placeholder:text-[#6B7A99]" placeholder="e.g. Develop our senior leadership team, reduce attrition..." />
+                  <textarea id="ent-msg" rows={3} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} className="w-full px-4 py-2.5 border border-[#D6E1F2] bg-[#F5F8FC] rounded-xl text-[14px] text-[#0D1B2E] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 resize-none placeholder:text-[#435070]" placeholder="e.g. Develop our senior leadership team, reduce attrition..." />
                 </div>
                 <button type="submit" className="w-full py-3.5 rounded-xl font-bold text-[15px] bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors">
                   Submit request
                 </button>
-                <p className="text-[11px] text-[#6B7A99] text-center" style={{ fontFamily: "Khula" }}>Our team responds within 1 business day. No spam, ever.</p>
+                <p className="text-[11px] text-[#435070] text-center" style={{ fontFamily: "Khula" }}>Our team responds within 1 business day. No spam, ever.</p>
               </form>
             )}
           </div>

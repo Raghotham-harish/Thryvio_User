@@ -59,7 +59,7 @@ function OrgMegaMenu({ dark }: { dark: boolean }) {
                 </div>
                 <div>
                   <p className={`text-[12px] font-bold leading-tight ${dark ? "text-white" : "text-[#0A192F]"}`}>{s.label}</p>
-                  <p className={`text-[11px] leading-snug mt-0.5 ${dark ? "text-white/55" : "text-[#6B7A99]"}`}>{s.desc}</p>
+                  <p className={`text-[11px] leading-snug mt-0.5 ${dark ? "text-white/65" : "text-[#435070]"}`}>{s.desc}</p>
                 </div>
               </Link>
             ))}
@@ -88,7 +88,7 @@ function OrgMegaMenu({ dark }: { dark: boolean }) {
                 </div>
                 <div>
                   <p className={`text-[12px] font-bold leading-tight ${dark ? "text-white" : "text-[#0A192F]"}`}>{w.label}</p>
-                  <p className={`text-[11px] leading-snug mt-0.5 ${dark ? "text-white/55" : "text-[#6B7A99]"}`}>{w.desc}</p>
+                  <p className={`text-[11px] leading-snug mt-0.5 ${dark ? "text-white/65" : "text-[#435070]"}`}>{w.desc}</p>
                 </div>
               </Link>
             ))}
@@ -138,7 +138,7 @@ function OrgMegaMenu({ dark }: { dark: boolean }) {
 
       {/* Footer strip */}
       <div className={`px-6 py-3 flex items-center justify-between border-t ${dark ? "bg-white/4 border-white/10" : "bg-[#F5F8FC] border-[#D6E1F2]"}`}>
-        <p className={`text-[11px] ${dark ? "text-white/50" : "text-[#6B7A99]"}`}>
+        <p className={`text-[11px] ${dark ? "text-white/65" : "text-[#435070]"}`}>
           Trusted by 1,200+ organisations in 70+ countries
         </p>
         <Link
